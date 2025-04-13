@@ -1,9 +1,9 @@
 import 'package:universal_io/io.dart';
 import 'dart:math';
 
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
-import 'package:curved_labeled_navigation_bar/src/nav_bar_item_widget.dart';
-import 'package:curved_labeled_navigation_bar/src/nav_custom_clipper.dart';
+import 'package:curved_labeled_gradient_navigation_bar/curved_navigation_bar_item.dart';
+import 'package:curved_labeled_gradient_navigation_bar/src/nav_bar_item_widget.dart';
+import 'package:curved_labeled_gradient_navigation_bar/src/nav_custom_clipper.dart';
 import 'package:flutter/material.dart';
 
 import 'src/nav_custom_painter.dart';
@@ -23,6 +23,13 @@ class CurvedNavigationBar extends StatefulWidget {
 
   /// The background color of floating button, default same as [color] attribute.
   final Color? buttonBackgroundColor;
+
+  /// An optional gradient for the background.
+  final Gradient? gradient;
+
+  /// An optional button gradient for the background.
+  final Gradient? buttonGradient;
+
 
   /// The color of [CurvedNavigationBar]'s background, default Colors.blueAccent.
   final Color backgroundColor;
@@ -61,6 +68,8 @@ class CurvedNavigationBar extends StatefulWidget {
     this.buttonBackgroundColor,
     this.backgroundColor = Colors.blueAccent,
     this.onTap,
+    this.gradient,
+    this.buttonGradient,
     _LetIndexPage? letIndexChange,
     this.animationCurve = Curves.easeOut,
     this.animationDuration = const Duration(milliseconds: 600),
@@ -170,18 +179,30 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
                           : null,
                       width: maxWidth / _length,
                       child: Center(
-                        child: Transform.translate(
-                          offset: Offset(0, (_buttonHide - 1) * 80),
-                          child: Material(
-                            color: widget.buttonBackgroundColor ?? widget.color,
-                            type: MaterialType.circle,
-                            child: Padding(
-                              padding: EdgeInsets.all(widget.iconPadding),
-                              child: _icon,
+                          child: Transform.translate(
+                            offset: Offset(0, (_buttonHide - 1) * 80),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                gradient: widget.buttonGradient,
+                                     color: widget.buttonGradient == null
+                                    ? (widget.buttonBackgroundColor ??
+                                        widget.color)
+                                    : null,
+                              ),
+                              child: Material(
+                                color: Colors
+                                    .transparent, // Transparent material color to show the gradient
+                                type: MaterialType.circle,
+                                child: Padding(
+                                  padding: EdgeInsets.all(widget.iconPadding),
+                                  child: _icon,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
+                        )
+
                     ),
                     // Background
                     Positioned(
@@ -194,6 +215,7 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
                           itemsLength: _length,
                           color: widget.color,
                           textDirection: Directionality.of(context),
+                           gradient: widget.gradient,
                           hasLabel: widget.hasLabel,
                         ),
                         child: Container(height: widget.height),

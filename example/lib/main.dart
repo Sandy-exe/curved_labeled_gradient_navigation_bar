@@ -1,6 +1,7 @@
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
+import 'package:curved_labeled_gradient_navigation_bar/curved_navigation_bar.dart';
+import 'package:curved_labeled_gradient_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 void main() => runApp(MaterialApp(home: BottomNavBar()));
 
@@ -21,29 +22,50 @@ class _BottomNavBarState extends State<BottomNavBar> {
         index: 0,
         items: [
           CurvedNavigationBarItem(
-            child: Icon(Icons.home_outlined),
+            child: Icon(Icons.home,color: Colors.white,),
             label: 'Home',
+            labelStyle: TextStyle(color: Colors.white)
           ),
           CurvedNavigationBarItem(
-            child: Icon(Icons.search),
+            child: Icon(Icons.search,
+              color: Colors.white,
+            ),
             label: 'Search',
+            labelStyle: TextStyle(color: Colors.white)
           ),
           CurvedNavigationBarItem(
-            child: Icon(Icons.chat_bubble_outline),
+            child: Icon(Icons.chat_bubble_outline,
+              color: Colors.white,
+            ),
             label: 'Chat',
+            labelStyle: TextStyle(color: Colors.white)
           ),
           CurvedNavigationBarItem(
-            child: Icon(Icons.newspaper),
+            child: Icon(Icons.newspaper,
+              color: Colors.white,
+            ),
             label: 'Feed',
+            labelStyle: TextStyle(color: Colors.white)
           ),
           CurvedNavigationBarItem(
-            child: Icon(Icons.perm_identity),
+            child: Icon(Icons.perm_identity,
+              color: Colors.white,
+            ),
             label: 'Personal',
+            labelStyle: TextStyle(
+              color: Colors.white
+            )
           ),
         ],
         color: Colors.white,
         buttonBackgroundColor: Colors.white,
-        backgroundColor: Colors.blueAccent,
+        buttonGradient: LinearGradient(
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
+          colors: [Color(0xFF00E6FF), Color(0xFFAE00E9)],
+          transform: GradientRotation(85.84 * math.pi / 180),
+        ),
+        backgroundColor: Colors.white,
         animationCurve: Curves.easeInOut,
         animationDuration: Duration(milliseconds: 600),
         onTap: (index) {
@@ -52,9 +74,15 @@ class _BottomNavBarState extends State<BottomNavBar> {
           });
         },
         letIndexChange: (index) => true,
+        gradient: LinearGradient(
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
+          colors: [Color(0xFF00E6FF), Color(0xFFAE00E9)],
+          transform: GradientRotation(85.84 * math.pi / 180),
+        ),
       ),
       body: Container(
-        color: Colors.blueAccent,
+        color: Colors.white,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

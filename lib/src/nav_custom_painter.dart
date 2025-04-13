@@ -9,6 +9,7 @@ class NavCustomPainter extends CustomPainter {
   Color color;
   bool hasLabel;
   TextDirection textDirection;
+  Gradient? gradient; // Optional gradient
 
   NavCustomPainter({
     required double startingLoc,
@@ -16,6 +17,7 @@ class NavCustomPainter extends CustomPainter {
     required this.color,
     required this.textDirection,
     this.hasLabel = false,
+    this.gradient, // Accept gradient as a parameter
   }) {
     final span = 1.0 / itemsLength;
     final l = startingLoc + (span - s) / 2;
@@ -27,9 +29,15 @@ class NavCustomPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..style = PaintingStyle.fill;
+    final paint = Paint()..style = PaintingStyle.fill;
+
+    // Use the gradient if provided, otherwise fall back to a solid color
+    if (gradient != null) {
+      paint.shader =
+          gradient!.createShader(Rect.fromLTWH(0, 0, size.width, size.height));
+    } else {
+      paint.color = color;
+    }
 
     final path = Path()
       ..moveTo(0, 0)

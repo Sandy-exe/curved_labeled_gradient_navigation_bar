@@ -1,12 +1,19 @@
-# curved_labeled_navigation_bar
-[pub package](https://pub.dartlang.org/packages/curved_labeled_navigation_bar)
+# curved_labeled_gradient_navigation_bar  
+[pub package](https://pub.dartlang.org/packages/curved_labeled_navigation_bar)  
 
-A Flutter package for easy implementation of curved navigation bar.
-This package is a fork of the original curved_navigation_bar from https://github.com/rafalbednarczuk/curved_navigation_bar with label for CurvedNavigationBarItem.
+A Flutter package for easy implementation of curved navigation bar.  
+This package is a fork of the original curved_navigation_bar from https://github.com/namanh11611/curved_labeled_navigation_bar with gradient support for CurvedNavigationBar.  
 
 | Label                                                                                                                       | No Label                                                                                                                          |
 |-----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| ![Gif](https://raw.githubusercontent.com/namanh11611/curved_labeled_navigation_bar/refs/heads/master/label.gif "Label Gif") | ![Gif](https://raw.githubusercontent.com/namanh11611/curved_labeled_navigation_bar/refs/heads/master/no_label.gif "No Label Gif") |
+| ![Label Gif](https://raw.githubusercontent.com/namanh11611/curved_labeled_navigation_bar/refs/heads/master/label.gif)      | ![No Label Gif](https://raw.githubusercontent.com/namanh11611/curved_labeled_navigation_bar/refs/heads/master/no_label.gif)      |
+
+| Gradient                                                                                                                    |                                                                                                                                    |
+|-----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| ![Gradient Gif](https://raw.githubusercontent.com/namanh11611/curved_labeled_navigation_bar/refs/heads/master/gradient.gif) |                                                                                                                                    |
+
+
+---
 
 ### Add dependency
 
@@ -14,6 +21,8 @@ This package is a fork of the original curved_navigation_bar from https://github
 dependencies:
   curved_labeled_navigation_bar: ^2.0.6 #latest version
 ```
+
+---
 
 ### Easy to use
 
@@ -51,6 +60,8 @@ Scaffold(
 )
 ```
 
+---
+
 ### Attributes
 
 #### CurvedNavigationBar
@@ -62,13 +73,15 @@ Scaffold(
 | `color`                 | Color of NavigationBar, default Colors.white                                                                                                               |
 | `buttonBackgroundColor` | Background color of floating button, default same as color attribute                                                                                       |
 | `backgroundColor`       | Color of NavigationBar's background, default Colors.blueAccent                                                                                             |
+| `gradient`              | Gradient background of NavigationBar. Overrides `color` if provided.                                                                                       |
+| `buttonGradient`        | Gradient background of floating button. Overrides `buttonBackgroundColor` if provided.                                                                     |
 | `onTap`                 | Function handling taps on items                                                                                                                            |
-| `letIndexChange`        | Function which takes page index as argument and returns bool. If function returns false then page is not changed on button tap. It returns true by default |
-| `animationCurve`        | Curves interpolating button change animation, default Curves.easeOut                                                                                       |
-| `animationDuration`     | Duration of button change animation, default Duration(milliseconds: 600)                                                                                   |
-| `height`                | Height of NavigationBar                                                                                                                                    |
-| `maxWidth`              | Allows to set the width of the navigation bar lower than the entire screen width by default                                                                |
-| `iconPadding`           | Padding of icon in floating button                                                                                                                         |
+| `letIndexChange`        | Function which takes page index as argument and returns bool. If false, the index does not change. Default is true.                                       |
+| `animationCurve`        | Curve of transition animation. Default is `Curves.easeOut`.                                                                                                |
+| `animationDuration`     | Duration of transition animation. Default is `Duration(milliseconds: 600)`.                                                                                |
+| `height`                | Height of the NavigationBar.                                                                                                                               |
+| `maxWidth`              | Max width of NavigationBar. Can make bar width smaller than the screen width.                                                                              |
+| `iconPadding`           | Padding around the floating icon button.                                                                                                                   |
 
 #### CurvedNavigationBarItem
 
@@ -77,6 +90,8 @@ Scaffold(
 | `child`      | Icon of CurvedNavigationBarItem |
 | `label`      | Text of CurvedNavigationBarItem |
 | `labelStyle` | TextStyle for label             |
+
+---
 
 ### Change page programmatically
 
@@ -127,7 +142,6 @@ Scaffold(
                 ElevatedButton(
                   child: Text('Go To Page of index 1'),
                   onPressed: () {
-                    // Page change using state does the same as clicking index 1 navigation button
                     final CurvedNavigationBarState? navBarState =
                         _bottomNavigationKey.currentState;
                     navBarState?.setPage(1);
@@ -140,3 +154,4 @@ Scaffold(
     );
   }
 ```
+
