@@ -5,13 +5,11 @@
 A Flutter package for easy implementation of curved navigation bar.  
 This package is a fork of the original curved_navigation_bar from https://github.com/namanh11611/curved_labeled_navigation_bar with gradient support for CurvedNavigationBar.
 
-| Label                                                                                                                 | No Label                                                                                                                    |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| ![Label Gif](https://raw.githubusercontent.com/namanh11611/curved_labeled_navigation_bar/refs/heads/master/label.gif) | ![No Label Gif](https://raw.githubusercontent.com/namanh11611/curved_labeled_navigation_bar/refs/heads/master/no_label.gif) |
 
 | Gradient                                                                                                                    |     |
 | --------------------------------------------------------------------------------------------------------------------------- | --- |
-| ![Gradient Gif](https://raw.githubusercontent.com/namanh11611/curved_labeled_navigation_bar/refs/heads/master/gradient.gif) |     |
+| [gradient](./gradient.png)
+|     |
 
 ---
 

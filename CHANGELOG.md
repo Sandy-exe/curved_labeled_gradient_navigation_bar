@@ -1,3 +1,6 @@
+## [2.0.10]
+- added button and color gradient
+
 ## [2.0.6]
 - Use universal_io instead of dart:io
 
