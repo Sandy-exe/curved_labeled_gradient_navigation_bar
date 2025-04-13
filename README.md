@@ -50,6 +50,18 @@ Scaffold(
         label: 'Personal',
       ),
     ],
+  gradient: LinearGradient(
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+    colors: [Color(0xFF00E6FF), Color(0xFFAE00E9)],
+    transform: GradientRotation(85.84 * math.pi / 180),
+  ),
+  buttonGradient: LinearGradient(
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+    colors: [Color(0xFF00E6FF), Color(0xFFAE00E9)],
+    transform: GradientRotation(85.84 * math.pi / 180),
+  ),
     onTap: (index) {
       // Handle button tap
     },
