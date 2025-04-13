@@ -19,7 +19,7 @@ This package is a fork of the original curved_navigation_bar from https://github
 
 ```yaml
 dependencies:
-  curved_labeled_navigation_bar: ^2.0.6 #latest version
+  curved_labeled_navigation_bar: ^2.0.10 #latest version
 ```
 
 ---
@@ -104,6 +104,18 @@ Scaffold(
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: CurvedNavigationBar(
+        gradient: LinearGradient(
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
+          colors: [Color(0xFF00E6FF), Color(0xFFAE00E9)],
+          transform: GradientRotation(85.84 * math.pi / 180),
+        ),
+        buttonGradient: LinearGradient(
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
+          colors: [Color(0xFF00E6FF), Color(0xFFAE00E9)],
+          transform: GradientRotation(85.84 * math.pi / 180),
+        ),
           key: _bottomNavigationKey,
           items: [
             CurvedNavigationBarItem(
