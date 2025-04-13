@@ -17,7 +17,7 @@ This package is a fork of the original curved_navigation_bar from https://github
 
 ```yaml
 dependencies:
-  curved_labeled_navigation_bar: ^2.0.11 #latest version
+  curved_labeled_navigation_bar: ^2.0.12 #latest version
 ```
 
 ---
