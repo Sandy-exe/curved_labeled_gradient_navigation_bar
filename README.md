@@ -1,15 +1,15 @@
 # curved_labeled_gradient_navigation_bar
 
-[pub package](https://pub.dartlang.org/packages/curved_labeled_navigation_bar)
+[pub package](https://pub.dev/packages/curved_labeled_gradient_navigation_bar)
 
 A Flutter package for easy implementation of curved navigation bar.  
 This package is a fork of the original curved_navigation_bar from https://github.com/namanh11611/curved_labeled_navigation_bar with gradient support for CurvedNavigationBar.
 
+| Gradient |     |
+| -------- | --- |
 
-| Gradient                                                                                                                    |     |
-| --------------------------------------------------------------------------------------------------------------------------- | --- |
-| [gradient](./gradient.png)
-|     |
+| ![gradient](https://github.com/Sandy-exe/curved_labeled_gradient_navigation_bar/blob/Test/gradient.png)
+| |
 
 ---
 
