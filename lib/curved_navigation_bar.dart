@@ -30,7 +30,6 @@ class CurvedNavigationBar extends StatefulWidget {
   /// An optional button gradient for the background.
   final Gradient? buttonGradient;
 
-
   /// The color of [CurvedNavigationBar]'s background, default Colors.blueAccent.
   final Color backgroundColor;
 
@@ -170,22 +169,22 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
                   alignment: Alignment.bottomCenter,
                   children: <Widget>[
                     Positioned(
-                      bottom: widget.height - 105.0,
-                      left: textDirection == TextDirection.rtl
-                          ? null
-                          : _pos * maxWidth,
-                      right: textDirection == TextDirection.rtl
-                          ? _pos * maxWidth
-                          : null,
-                      width: maxWidth / _length,
-                      child: Center(
+                        bottom: widget.height - 105.0,
+                        left: textDirection == TextDirection.rtl
+                            ? null
+                            : _pos * maxWidth,
+                        right: textDirection == TextDirection.rtl
+                            ? _pos * maxWidth
+                            : null,
+                        width: maxWidth / _length,
+                        child: Center(
                           child: Transform.translate(
                             offset: Offset(0, (_buttonHide - 1) * 80),
                             child: Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 gradient: widget.buttonGradient,
-                                     color: widget.buttonGradient == null
+                                color: widget.buttonGradient == null
                                     ? (widget.buttonBackgroundColor ??
                                         widget.color)
                                     : null,
@@ -201,9 +200,7 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
                               ),
                             ),
                           ),
-                        )
-
-                    ),
+                        )),
                     // Background
                     Positioned(
                       left: 0,
@@ -215,7 +212,7 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
                           itemsLength: _length,
                           color: widget.color,
                           textDirection: Directionality.of(context),
-                           gradient: widget.gradient,
+                          gradient: widget.gradient,
                           hasLabel: widget.hasLabel,
                         ),
                         child: Container(height: widget.height),

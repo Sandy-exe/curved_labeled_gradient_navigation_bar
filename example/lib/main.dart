@@ -24,40 +24,40 @@ class _BottomNavBarState extends State<BottomNavBar> {
         index: 0,
         items: [
           CurvedNavigationBarItem(
-            child: Icon(Icons.home,color: Colors.white,),
-            label: 'Home',
-            labelStyle: TextStyle(color: Colors.white)
-          ),
+              child: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              label: 'Home',
+              labelStyle: TextStyle(color: Colors.white)),
           CurvedNavigationBarItem(
-            child: Icon(Icons.search,
-              color: Colors.white,
-            ),
-            label: 'Search',
-            labelStyle: TextStyle(color: Colors.white)
-          ),
+              child: Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
+              label: 'Search',
+              labelStyle: TextStyle(color: Colors.white)),
           CurvedNavigationBarItem(
-            child: Icon(Icons.chat_bubble_outline,
-              color: Colors.white,
-            ),
-            label: 'Chat',
-            labelStyle: TextStyle(color: Colors.white)
-          ),
+              child: Icon(
+                Icons.chat_bubble_outline,
+                color: Colors.white,
+              ),
+              label: 'Chat',
+              labelStyle: TextStyle(color: Colors.white)),
           CurvedNavigationBarItem(
-            child: Icon(Icons.newspaper,
-              color: Colors.white,
-            ),
-            label: 'Feed',
-            labelStyle: TextStyle(color: Colors.white)
-          ),
+              child: Icon(
+                Icons.newspaper,
+                color: Colors.white,
+              ),
+              label: 'Feed',
+              labelStyle: TextStyle(color: Colors.white)),
           CurvedNavigationBarItem(
-            child: Icon(Icons.perm_identity,
-              color: Colors.white,
-            ),
-            label: 'Personal',
-            labelStyle: TextStyle(
-              color: Colors.white
-            )
-          ),
+              child: Icon(
+                Icons.perm_identity,
+                color: Colors.white,
+              ),
+              label: 'Personal',
+              labelStyle: TextStyle(color: Colors.white)),
         ],
         color: Colors.white,
         buttonBackgroundColor: Colors.white,

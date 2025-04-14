@@ -52,10 +52,11 @@ packages:
   curved_labeled_gradient_navigation_bar:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
-    version: "2.0.10"
+      name: curved_labeled_gradient_navigation_bar
+      sha256: c32543691c3a90b69aff6c31d23bf7a8ee74c2d0cfa055abb4f1fc0c6b366b8e
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.12"
   fake_async:
     dependency: transitive
     description:
